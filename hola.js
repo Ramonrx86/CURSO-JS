@@ -1,1 +1,1 @@
-console.log("hola")
+HTMLFormControlsCollection.log("hola mundo")
