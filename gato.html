@@ -44,28 +44,30 @@
     <img id="cat-image" src="gato.png" alt="Gato">
 
     <script>
-        let countdown = 10;
-        const counterElement = document.getElementById('counter');
-        const catImage = document.getElementById('cat-image');
+        document.addEventListener('DOMContentLoaded', () => {
+            let countdown = 10;
+            const counterElement = document.getElementById('counter');
+            const catImage = document.getElementById('cat-image');
 
-        function updateCounter() {
-            counterElement.textContent = countdown;
-            if (countdown === 0) {
-                counterElement.style.display = 'none'; // Oculta el contador
-                catImage.style.display = 'block'; // Muestra la imagen
-                setTimeout(() => {
-                    catImage.style.opacity = 1; // Aparece lentamente
-                }, 100);
+            function updateCounter() {
+                counterElement.textContent = countdown;
+                if (countdown === 0) {
+                    counterElement.style.display = 'none'; // Oculta el contador
+                    catImage.style.display = 'block'; // Muestra la imagen
+                    setTimeout(() => {
+                        catImage.style.opacity = 1; // Aparece lentamente
+                    }, 100);
+                }
+                countdown -= 1;
             }
-            countdown -= 1;
-        }
 
-        const interval = setInterval(() => {
-            updateCounter();
-            if (countdown < 0) {
-                clearInterval(interval);
-            }
-        }, 1000);
+            const interval = setInterval(() => {
+                updateCounter();
+                if (countdown < 0) {
+                    clearInterval(interval);
+                }
+            }, 1000);
+        });
     </script>
 </body>
 </html>
