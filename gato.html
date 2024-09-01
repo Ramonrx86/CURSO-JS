@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador y Gato</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            overflow: hidden; /* Para evitar barras de desplazamiento */
+        }
+        #counter {
+            font-size: 10em; /* Tamaño grande para el contador */
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10; /* Asegura que el contador esté encima de la imagen */
+        }
+        #cat-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw; /* Ocupa toda la pantalla */
+            height: 100vh; /* Ocupa toda la pantalla */
+            object-fit: cover; /* Asegura que la imagen cubra toda la pantalla */
+            display: none;
+            opacity: 0;
+            transition: opacity 2s ease-in;
+            z-index: 5; /* Asegura que la imagen esté detrás del contador */
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">10</div>
+    <img id="cat-image" src="gato.png" alt="Gato">
+
+    <script>
+        let countdown = 10;
+        const counterElement = document.getElementById('counter');
+        const catImage = document.getElementById('cat-image');
+
+        function updateCounter() {
+            counterElement.textContent = countdown;
+            if (countdown === 0) {
+                counterElement.style.display = 'none'; // Oculta el contador
+                catImage.style.display = 'block'; // Muestra la imagen
+                setTimeout(() => {
+                    catImage.style.opacity = 1; // Aparece lentamente
+                }, 100);
+            }
+            countdown -= 1;
+        }
+
+        const interval = setInterval(() => {
+            updateCounter();
+            if (countdown < 0) {
+                clearInterval(interval);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
