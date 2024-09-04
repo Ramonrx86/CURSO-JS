@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>??</title>
+    <title>Contador con Imagen y Audio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,12 +42,14 @@
 <body>
     <div id="counter">10</div>
     <img id="cat-image" src="gato.png" alt="Gato">
+    <audio id="cat-sound" src="gatoriendoce.mp3"></audio> <!-- Audio actualizado -->
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             let countdown = 10;
             const counterElement = document.getElementById('counter');
             const catImage = document.getElementById('cat-image');
+            const catSound = document.getElementById('cat-sound');
 
             function updateCounter() {
                 counterElement.textContent = countdown;
@@ -57,6 +59,7 @@
                     setTimeout(() => {
                         catImage.style.opacity = 1; // Aparece lentamente
                     }, 100);
+                    catSound.play(); // Reproduce el audio cuando aparece la imagen
                 }
                 countdown -= 1;
             }
