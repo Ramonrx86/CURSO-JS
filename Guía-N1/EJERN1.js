@@ -1,19 +1,19 @@
-// función para calcular el área de un círculo
+// calcular el área de un círculo
 function areaCirculo(radio) {
   return Math.PI * (radio ** 2); // fórmula: π * R²
 }
 
-// función para calcular el área de un triángulo
+// calcular el área de un triángulo
 function areaTriangulo(base, altura) {
   return (base * altura) / 2; // fórmula: (base * altura) / 2
 }
 
-// función para calcular el área de un rectángulo
+// calcular el área de un rectángulo
 function areaRectangulo(base, altura) {
   return base * altura; // fórmula: base * altura
 }
 
-// captura y cálculo de áreas
+// prompts y cálculo de áreas
 let radio = parseFloat(prompt("Ingrese el radio del círculo:"));
 console.log("Área del círculo:", areaCirculo(radio));
 

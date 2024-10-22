@@ -1,4 +1,4 @@
-// Clase base Trabajador
+// Clase Trabajador
 class Trabajador {
     constructor(nombre, sueldo) {
         this.nombre = nombre;
@@ -10,7 +10,7 @@ class Trabajador {
     }
 }
 
-// Clase Gerente con su propio constructor
+// Clase Gerente
 class Gerente {
     constructor(nombre, sueldo, departamento) {
         this.nombre = nombre;
